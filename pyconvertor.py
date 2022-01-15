@@ -47,22 +47,17 @@ e.pack()
 
 
 def con():
-    # second window
-    sw = tkinter.Tk()
-    sw.title("result of your convetion")
 
     if(unit1.get() == "centimeters"):
         if(unit2.get() == "inches"):
-            l = tkinter.Label(sw, height = 3, text = float(e.get())/2.54)
+            l = tkinter.Label(m, height = 3, text = float(e.get())/2.54)
     else:
-        l = tkinter.Label(sw, height = 3, text = float(e.get())*2.54)
+        l = tkinter.Label(m, height = 3, text = float(e.get())*2.54)
     l.pack()    
-    
-    exit_button = tkinter.Button(sw, text="exit", command = m.destroy)
-    exit_button.pack()
+
 
 #button to submit 
-submit_button = tkinter.Button(m, text='Submit', command = con and m.destroy)
+submit_button = tkinter.Button(m, text='Submit', command = con)
 submit_button.pack()
 
 exit_button = tkinter.Button(m, text="exit", command = m.destroy)
